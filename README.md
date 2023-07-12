@@ -18,7 +18,7 @@ A aplicação "organo" possui as seguintes características:
 
 Certifique-se de ter os seguintes pré-requisitos instalados em seu ambiente de desenvolvimento:
 
-- Node.js (versão X.X.X ou superior)
+- Node.js (versão 16.5 ou superior)
 - NPM (gerenciador de pacotes do Node.js)
 
 ## Configuração do Ambiente
