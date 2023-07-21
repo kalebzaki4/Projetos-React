@@ -1,12 +1,13 @@
 import './ListaSuspensa.css'
+import aoAlterado from '../CampoTexto'
 
 const ListaSuspensa = (props) => {
     return (
         <div className='lista-suspensa'>
             <label>{props.label}</label>
-            <select>
-                {props.itens.map(item =>{
-                   return <option key={item}>{item}</option>
+            <select onChange={evento => props.aoAlterado(evento.target.value)} required={props.required} value={props.valor}>
+                {props.itens.map(item => {
+                    return <option key={item}>{item}</option>
                 })}
             </select>
         </div>
