@@ -2,7 +2,7 @@ import styles from "./SobreMim.module.css";
 
 import PostModelo from "componentes/PostModelo";
 import fotoCapa from "assets/sobre_mim_capa.png";
-import fotoSobreMim from "../../assets/sobre_mim_foto.jpg";
+import fotoSobreMim from "assets/sobre_mim_foto.png";
 
 export default function SobreMim() {
     return (
@@ -11,17 +11,17 @@ export default function SobreMim() {
             titulo="Sobre mim"
         >
             <h3 className={styles.subtitulo}>
-                Olá, eu sou o Kalebzaki4!
+                Olá, eu sou o Antônio!
             </h3>
 
             <img
                 src={fotoSobreMim}
-                alt="Foto do kaleb"
+                alt="Foto do Antônio Evaldo sorrindo"
                 className={styles.fotoSobreMim}
             />
 
             <p className={styles.paragrafo}>
-                Oi, tudo bem? Eu sou Estudante desenvolvedor e estou feliz de te ver por aqui.
+                Oi, tudo bem? Eu sou instrutor de Front-end na Alura e estou feliz de te ver por aqui.
             </p>
             <p className={styles.paragrafo}>
                 Minha história com programação começou no Instituto Federal do Piauí (IFPI), quando fiz o ensino médio integrado ao curso de Informática. Eu aprendi lógica de programação e o básico de várias linguagens, como PHP, Python, Java, mas sem aprofundar muito em cada uma delas. Eu gostava muito de estudar programação, mas na época não fazia ideia de que trabalharia com isso hoje.
