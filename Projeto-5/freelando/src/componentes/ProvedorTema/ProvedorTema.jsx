@@ -1,4 +1,4 @@
-import { ThemeProvider } from "@emotion/react"
+import { ThemeProvider } from '@emotion/react'
 
 const tema = {
     cores: {
@@ -16,7 +16,7 @@ const tema = {
             c: ''
         },
         neutras: {
-            a: '',
+            a: '#373737',
             b: '',
             c: '',
             d: ''
@@ -24,17 +24,18 @@ const tema = {
         dark: {
             a: '',
             b: ''
-        },
+        }
     },
     espacamentos: {
-        s: '16px',
-        l: '32px'
+       xs: '8px',
+       s : '16px',
+       l : '32px',
     },
     fontFamily: "'Montserrat', sans-serif"
 }
 
 export const ProvedorTema = ({ children }) => {
     return <ThemeProvider theme={tema}>
-        {children}
+        { children }
     </ThemeProvider>
 }
