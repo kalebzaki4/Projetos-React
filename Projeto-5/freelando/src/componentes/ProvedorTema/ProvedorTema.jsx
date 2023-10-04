@@ -30,6 +30,7 @@ const tema = {
        xs: '8px',
        s : '16px',
        l : '32px',
+       xl: '48px'
     },
     fontFamily: "'Montserrat', sans-serif"
 }
