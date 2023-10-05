@@ -1,70 +1,41 @@
-# Getting Started with Create React App
+![Freelando](thumbnail.png)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Freelando
 
-## Available Scripts
+O Freelando é uma StartUP. 
+Nesse momento, é um MVP que tá só começando e ainda tem muitas funcionalidades novas para serem desenvolvidas.
 
-In the project directory, you can run:
+<img src="screencapture.png" alt="Imagem do Freelando" width="50%">
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 🔨 Funcionalidades do projeto
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Nesse primeiro momento, nós temos a página que foi idealizada como a primeiro entrega do time de desenvolvimento.
 
-### `npm test`
+O [Figma dessa aplicação você encontra aqui](https://www.figma.com/file/DGIzbfXEi27oiKzI0nGMIV/Freelando-%7C-WebApp-com-React?node-id=244%3A11524&t=J2NfqHrvVIr0jsgs-0).
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## ✔️ Técnicas e tecnologias utilizadas
 
-### `npm run build`
+Se liga nessa lista de tudo que usaremos nesse curso:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- `React`
+- `Create React App`
+- `Emotion`
+- `React Grid System`
+- `Eventos do Teclado`
+- `GitHub`
+- `Trello`
+- `Figma`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+E muito mais!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 🛠️ Abrir e rodar o projeto
 
-### `npm run eject`
+Para abrir e rodar o projeto, execute `npm i` para instalar as dependências e `npm start` para inicar o projeto.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Depois, acesse <a href="http://localhost:3000/">http://localhost:3000/</a> no seu navegador.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 📚 Mais informações do curso
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+O Freelando é uma StartUP fictícia utilizada nesse curso da Alura.
+A ideia principal desse curso é evoluir ainda mais os conhecimentos em React e estilização de componentes.
