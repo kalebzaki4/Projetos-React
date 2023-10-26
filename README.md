@@ -6,7 +6,7 @@ Bem-vindo ao repositório "react-basico"! Aqui você encontrará o projeto "orga
 
 O projeto "organo" é uma aplicação simples desenvolvida em React. Ele serve como um ponto de partida para iniciantes compreenderem os conceitos fundamentais do React de maneira prática e envolvente.
 
-A aplicação "organo" apresenta as seguintes características:
+A aplicação apresenta as seguintes características:
 
 - Demonstração de componentes React com interatividade;
 - Utilização eficaz de estados e props para criar uma interface dinâmica;
