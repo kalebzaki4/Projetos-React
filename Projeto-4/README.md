@@ -1,70 +1,70 @@
-# Primeiros passos com o Projeto 4
+# Começando com o Create React App 🚀
 
 Este projeto foi inicializado com [Create React App](https://github.com/facebook/create-react-app).
 
-## Scripts Disponíveis
+## Scripts Disponíveis 📜
 
 No diretório do projeto, você pode executar:
 
-### `início do fio`
+### `yarn start` ▶️
 
 Executa o aplicativo no modo de desenvolvimento.\
 Abra [http://localhost:3000](http://localhost:3000) para visualizá-lo no navegador.
 
 A página será recarregada se você fizer edições.\
-Você também verá erros de lint no console.
+Você também verá quaisquer erros de lint no console.
 
-### `teste de fio`
+### `yarn test` 🧪
 
-Inicia o executor de testes no modo de observação interativo.\
+Inicia o executor de testes no modo interativo.\
 Consulte a seção sobre [execução de testes](https://facebook.github.io/create-react-app/docs/running-tests) para obter mais informações.
 
-### `construção de fio`
+### `yarn build` 🏗️
 
-Cria o aplicativo para produção na pasta `build`.\
-Ele agrupa corretamente o React no modo de produção e otimiza a construção para obter o melhor desempenho.
+Compila o aplicativo para produção na pasta `build`.\
+Ele empacota o React corretamente no modo de produção e otimiza a compilação para obter o melhor desempenho.
 
-A compilação é reduzida e os nomes dos arquivos incluem os hashes.\
+A compilação é minificada e os nomes de arquivos incluem os hashes.\
 Seu aplicativo está pronto para ser implantado!
 
 Consulte a seção sobre [implantação](https://facebook.github.io/create-react-app/docs/deployment) para obter mais informações.
 
-### `ejetar fio`
+### `yarn eject` ⚠️
 
-**Observação: esta é uma operação unidirecional. Depois de `ejetar`, você não pode voltar!**
+**Observação: esta é uma operação unilateral. Uma vez que você `eject`, não é possível voltar atrás!**
 
-Se você não estiver satisfeito com a ferramenta de construção e as opções de configuração, você pode `ejetar` a qualquer momento. Este comando removerá a dependência de compilação única do seu projeto.
+Se você não estiver satisfeito com a ferramenta de compilação e as opções de configuração, você pode `eject` a qualquer momento. Este comando removerá a única dependência de compilação do seu projeto.
 
-Em vez disso, ele copiará todos os arquivos de configuração e as dependências transitivas (webpack, Babel, ESLint, etc) diretamente no seu projeto para que você tenha controle total sobre eles. Todos os comandos, exceto `eject`, ainda funcionarão, mas apontarão para os scripts copiados para que você possa ajustá-los. Neste ponto você está sozinho.
+Em vez disso, ele copiará todos os arquivos de configuração e as dependências transitivas (webpack, Babel, ESLint, etc) diretamente para o seu projeto para que você tenha total controle sobre eles. Todos os comandos, exceto `eject`, ainda funcionarão, mas apontarão para os scripts copiados para que você possa ajustá-los. Neste ponto, você está por conta própria.
 
-Você nunca precisa usar `ejetar`. O conjunto de recursos selecionados é adequado para implantações pequenas e médias e você não deve se sentir obrigado a usar esse recurso. No entanto, entendemos que esta ferramenta não seria útil se você não pudesse personalizá-la quando estiver pronto para isso.
+Você não é obrigado a usar o `eject`. O conjunto de recursos pré-configurados é adequado para implantações pequenas e médias, e você não deve se sentir obrigado a usar essa funcionalidade. No entanto, entendemos que essa ferramenta não seria útil se você não pudesse personalizá-la quando estiver pronto.
 
-## Saber mais
+## Saiba Mais 📚
 
-Você pode saber mais na [documentação sobre criação do aplicativo React](https://facebook.github.io/create-react-app/docs/getting-started).
+Você pode aprender mais na [documentação do Create React App](https://facebook.github.io/create-react-app/docs/getting-started).
 
-Para aprender o React, confira a [documentação do React](https://reactjs.org/).
+Para aprender React, confira a [documentação do React](https://reactjs.org/).
 
-### Divisão de código
+### Divisão de Código
 
-Esta seção foi movida para aqui: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code- divisão)
+Esta seção foi movida para: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analisando o tamanho do pacote
+### Análise do Tamanho do Pacote
 
-Esta seção foi movida para aqui: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/ documentos/analisando o tamanho do pacote)
+Esta seção foi movida para: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Criando um aplicativo da Web progressivo
+### Criando um Aplicativo Web Progressivo
 
-Esta seção foi movida para aqui: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react- app/docs/criando-um-aplicativo-web-progressivo)
+Esta seção foi movida para: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Configuração avançada
+### Configuração Avançada
 
-Esta seção foi movida para aqui: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced- configuração)
+Esta seção foi movida para: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
 ### Implantação
 
-Esta seção foi movida para aqui: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Esta seção foi movida para: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `yarn build` não consegue minificar
+### `yarn build` falha na minificação
 
-Esta seção foi movida para aqui: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/ create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Esta seção foi movida para: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
