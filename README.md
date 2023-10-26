@@ -6,31 +6,31 @@ Este repositório contém uma coleção de projetos que estou desenvolvendo. Al�
 
 Organo é o meu projeto principal. Ele se concontra ja terminado. Você pode encontrar mais detalhes e contribuir para este projeto em seu repositório dedicado.
 
-[[Link para o repositório do Organo](https://github.com/kalebzaki4/React-Basico/tree/main/Projeto-1/Organo)]
+[Link para o repositório do Organo](https://github.com/kalebzaki4/React-Basico/tree/main/Projeto-1/Organo)
 
 ## Space-App 🚀
 
 Space-App é um projeto que se concentra em um pequeno site para estudar sobre todos os micro-serviços do react, dependências etc. Você pode encontrar mais informações e contribuir para este projeto em seu repositório separado.
 
-[[Link para o repositório do Space-App](https://github.com/kalebzaki4/React-Basico/tree/main/Projeto-2/space-app)]
+[Link para o repositório do Space-App](https://github.com/kalebzaki4/React-Basico/tree/main/Projeto-2/space-app)
 
 ## Olá Mundo 👋
 
 Olá Mundo é um projeto simples que ensina como devemos usar react-dom e react-router-dom. Você pode encontrar mais detalhes e contribuir para este projeto em seu repositório dedicado.
 
-[[Link para o repositório do Olá Mundo](https://github.com/kalebzaki4/React-Basico/tree/main/Projeto-3/ola-mundo)]
+[Link para o repositório do Olá Mundo](https://github.com/kalebzaki4/React-Basico/tree/main/Projeto-3/ola-mundo)
 
 ## Lista de Compras 📝
 
 Lista de Compras é um aplicativo que serve para praticar tudo de react que ja fizemos até agora. Você pode encontrar mais informações e contribuir para este projeto em seu repositório separado.
 
-[[Link para o repositório da Lista de Compras](https://github.com/kalebzaki4/React-Basico/tree/main/Projeto-4)]
+[Link para o repositório da Lista de Compras](https://github.com/kalebzaki4/React-Basico/tree/main/Projeto-4)
 
 ## Freelando 💼
 
 Freelando é um projeto relacionado a freelancers que já é um pouco mais completo justamente para executar mais e mais oque aprendemos nesses outros projetos. Você pode encontrar mais detalhes e contribuir para este projeto em seu repositório dedicado.
 
-[[Link para o repositório do Freelando](https://github.com/kalebzaki4/React-Basico/tree/main/Projeto-5/freelando)]
+[Link para o repositório do Freelando](https://github.com/kalebzaki4/React-Basico/tree/main/Projeto-5/freelando)
 
 Sinta-se à vontade para explorar e contribuir para qualquer um dos projetos listados aqui. Se você tiver alguma dúvida ou sugestão, entre em contato comigo.
 
