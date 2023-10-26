@@ -1,4 +1,4 @@
-# React Básico - Organo 🚀⚛️
+# React Básico 🚀⚛️
 
 Bem-vindo ao repositório "react-basico"! Aqui você encontrará o projeto "organo", um exemplo básico de aplicação React para começar sua jornada no mundo da programação frontend com entusiasmo!
 
