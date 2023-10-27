@@ -1,16 +1,22 @@
-# Freelando 🚀
+![Freelando](thumbnail.png)
 
-O Freelando é uma StartUP em crescimento. Atualmente, é um MVP (Produto Mínimo Viável) que está apenas começando, e ainda há muitas funcionalidades empolgantes a serem desenvolvidas.
+# Freelando
 
-![Imagem do Freelando](screencapture.png)
+O Freelando é uma StartUP. 
+Nesse momento, é um MVP que tá só começando e ainda tem muitas funcionalidades novas para serem desenvolvidas.
 
-## 🔨 Funcionalidades do Projeto
+<img src="screencapture.png" alt="Imagem do Freelando" width="50%">
 
-Neste estágio inicial, temos a primeira entrega do nosso time de desenvolvimento. Você pode conferir o [Figma desta aplicação aqui](https://www.figma.com/file/DGIzbfXEi27oiKzI0nGMIV/Freelando-%7C-WebApp-com-React?node-id=244%3A11524&t=J2NfqHrvVIr0jsgs-0).
 
-## ✔️ Técnicas e Tecnologias Utilizadas
+## 🔨 Funcionalidades do projeto
 
-Aqui está a lista das principais tecnologias e ferramentas que usamos neste projeto:
+Nesse primeiro momento, nós temos a página que foi idealizada como a primeiro entrega do time de desenvolvimento.
+
+O [Figma dessa aplicação você encontra aqui](https://www.figma.com/file/DGIzbfXEi27oiKzI0nGMIV/Freelando-%7C-WebApp-com-React?node-id=244%3A11524&t=J2NfqHrvVIr0jsgs-0).
+
+## ✔️ Técnicas e tecnologias utilizadas
+
+Se liga nessa lista de tudo que usaremos nesse curso:
 
 - `React`
 - `Create React App`
@@ -23,18 +29,13 @@ Aqui está a lista das principais tecnologias e ferramentas que usamos neste pro
 
 E muito mais!
 
-## 🛠️ Como Abrir e Rodar o Projeto
+## 🛠️ Abrir e rodar o projeto
 
-Para abrir e rodar o projeto, siga estes passos:
+Para abrir e rodar o projeto, execute `npm i` para instalar as dependências e `npm start` para inicar o projeto.
 
-1. Execute `npm i` para instalar as dependências.
-2. Em seguida, execute `npm start` para iniciar o projeto.
-3. Acesse o projeto no seu navegador através de [http://localhost:3000/](http://localhost:3000/).
+Depois, acesse <a href="http://localhost:3000/">http://localhost:3000/</a> no seu navegador.
 
-## 📚 Mais Informações do Projeto
+## 📚 Mais informações do curso
 
-O Freelando é uma StartUP fictícia usada neste curso da Alura. O objetivo principal deste curso é aprimorar seus conhecimentos em React e na estilização de componentes.
-
-Estamos empolgados com o crescimento do Freelando e as futuras funcionalidades que estamos desenvolvendo. Fique à vontade para contribuir e fazer parte deste emocionante projeto!
-
-</details>
+O Freelando é uma StartUP fictícia utilizada nesse curso da Alura.
+A ideia principal desse curso é evoluir ainda mais os conhecimentos em React e estilização de componentes.
