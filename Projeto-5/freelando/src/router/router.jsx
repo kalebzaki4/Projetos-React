@@ -1,17 +1,25 @@
 import { createBrowserRouter } from "react-router-dom"
+import LayoutBaseCadastro from "../paginas/cadastro/LayoutBaseCadastro";
+import SelecaoCliente from "../paginas/cadastro/SelecaoCliente";
+import LayoutBase from "../paginas/LayoutBase";
 import PaginaInicial from "../paginas/PaginaInicial"
 
 export const router = createBrowserRouter([
     {
         path: "/",
+        element: <LayoutBase />,
         children: [
             {
-                path: 'cadastro',
-                element: <h1>Seleção de tipo de cliente</h1>,
+                path:'cadastro',
+                element: <LayoutBaseCadastro />,
                 children: [
                     {
+                        path: '',
+                        element: <SelecaoCliente />
+                    },
+                    {
                         path: 'cliente',
-                        element: <h1>interesses</h1>
+                        element: <h1>Interesesses</h1>
                     },
                     {
                         path: 'dados-pessoais',
@@ -19,8 +27,8 @@ export const router = createBrowserRouter([
                     },
                     {
                         path: 'concluido',
-                        element: <h1>Concluido</h1>
-                    },
+                        element: <h1>Concluído</h1>
+                    }
                 ]
             }
         ],
