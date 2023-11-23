@@ -36,13 +36,15 @@ const Interesses = () => {
 
     const [opcao, setOpcao] = useState('')
 
-    return (<div style={{ textAlign: 'center' }}>
-        <Tipografia variante="h1" componente="h1">
-            Crie seu cadastro
-        </Tipografia>
-        <Tipografia variante='h3' componente='h2'>
-            Qual a área de interesse?
-        </Tipografia>
+    return (<>
+        <div style={{ textAlign: 'center' }}>
+            <Tipografia variante="h1" componente="h1">
+                Crie seu cadastro
+            </Tipografia>
+            <Tipografia variante='h3' componente='h2'>
+                Qual a área de interesse?
+            </Tipografia>
+        </div>
         <GrupoRadio opcoes={opcoes} valor={opcao} onChange={setOpcao} />
         <Row>
             <Col lg={6} md={6} sm={6}>
@@ -62,7 +64,7 @@ const Interesses = () => {
                 </div>
             </Col>
         </Row>
-    </div>)
+    </>)
 }
 
 export default Interesses
