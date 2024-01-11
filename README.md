@@ -32,6 +32,12 @@ Freelando é um projeto relacionado a freelancers que já é um pouco mais compl
 
 [Link para o repositório do Freelando](https://github.com/kalebzaki4/React-Basico/tree/main/Projeto-5/freelando)
 
+## Alura-Books 📚
+
+Alura-Books é um projeto sobre livros, que já é um pouco mais completo justamente para executar mais e mais oque aprendemos nesses outros projetos. Um projeto para aperfeiçoar oque aprendi de react até agora. Você pode encontrar mais detalhes e contribuir para este projeto em seu repositório dedicado.
+
+[Link para o repositório do Alura-books](https://github.com/kalebzaki4/Projetos-React/tree/main/Projeto-6/Alura-Books)
+
 Sinta-se à vontade para explorar e contribuir para qualquer um dos projetos listados aqui. Se você tiver alguma dúvida ou sugestão, entre em contato comigo.
 
 ## Como Contribuir 🤝
