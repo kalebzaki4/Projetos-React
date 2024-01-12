@@ -1,12 +1,16 @@
-import logo from '../../Imagens/logo.svg'
 import './estilo.css'
+import logo from '../../imagens/logo.svg'
 
 function Logo() {
     return (
-        <div className='Logo'>
-            <img src={logo} alt='logo'></img>
-            <p><strong>Alura </strong>Books</p>
-        </div>
+        <div className='logo'>
+            <img
+                src={logo}
+                alt='logo' 
+                className='logo-img'
+            ></img>
+            <p><strong>Alura</strong>Books</p>
+       </div>
     )
 }
 
