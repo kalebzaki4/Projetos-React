@@ -1,9 +1,6 @@
 import styled from 'styled-components'
-import './estilo.css'
 
-const textoOpcoes = ['CATEGORIAS', 'FAVORITOS', 'MINHA ESTANTE']
-
-const Opcao = styled.ul`
+const Opcao = styled.li`
     font-size: 16px;
     display: flex;
     justify-content: center;
@@ -19,13 +16,15 @@ const Opcoes = styled.ul`
     display: flex;
 `
 
+const textoOpcoes = ['CATEGORIAS', 'FAVORITOS', 'MINHA ESTANTE']
+
 function OpcoesHeader() {
     return (
         <Opcoes>
-            {textoOpcoes.map((texto) => (
+            { textoOpcoes.map( (texto) => (
                 <Opcao><p>{texto}</p></Opcao>
-            ))}
-        </Opcoes>
+            ) ) }
+      </Opcoes>
     )
 }
 
