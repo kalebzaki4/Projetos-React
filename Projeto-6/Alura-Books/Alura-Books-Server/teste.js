@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+const fs = require("fs")
 
+const dadosAtuais = JSON.parse(fs.readFileSync("livros.json"))
+const novoDado = { id: '3', nome: 'Livro slk' }
 
-function teste() {
-    return (  );
-}
+fs.writeFileSync("livros.json", JSON.stringify([...dadosAtuais, novoDado ]))
 
-export default teste;
+console.log(JSON.parse(fs.readFileSync("livros.json")))
