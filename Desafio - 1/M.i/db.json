@@ -1,6 +1,3 @@
 {
-    "users": [
-      { "email": "usuario@example.com", "password": "senha" }
-    ]
-  }
-  
+  "users": []
+}
