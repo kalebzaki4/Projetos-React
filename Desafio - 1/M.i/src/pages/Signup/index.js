@@ -1,4 +1,4 @@
-// Signup.js
+// ... (seu código existente)
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
@@ -13,6 +13,7 @@ function Signup() {
     const [error, setError] = useState('');
     const [successMessage, setSuccessMessage] = useState('');
     const navigate = useNavigate();
+    const [users, setUsers] = useState([]);
 
     const handleSignup = async (e) => {
         e.preventDefault();
@@ -38,6 +39,19 @@ function Signup() {
             });
 
             if (response.ok) {
+                // Adicionando o novo usuário ao estado local
+                const newUser = { id: Date.now(), email, password };
+                setUsers([...users, newUser]);
+
+                // Adicionando o novo usuário ao db.json local
+                await fetch('http://localhost:3000/users', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(newUser),
+                });
+
                 setSuccessMessage('Conta criada com sucesso! Redirecionando para o login...');
                 setTimeout(() => {
                     navigate('/');
