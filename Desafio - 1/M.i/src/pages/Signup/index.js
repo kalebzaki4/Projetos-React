@@ -1,4 +1,3 @@
-// ... (seu código existente)
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
@@ -30,7 +29,7 @@ function Signup() {
 
         try {
             // Simulando o envio dos dados para um servidor
-            const response = await fetch('https://raw.githubusercontent.com/kalebzaki4/projetos-react/master/db.json', {
+            const response = await fetch('https://kalebzaki4.github.io/projetos-react/db.json', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -43,14 +42,7 @@ function Signup() {
                 const newUser = { id: Date.now(), email, password };
                 setUsers([...users, newUser]);
 
-                // Adicionando o novo usuário ao db.json local
-                await fetch('http://localhost:3000/users', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify(newUser),
-                });
+                // Não é necessário adicionar ao db.json local, pois já estamos salvando no GitHub
 
                 setSuccessMessage('Conta criada com sucesso! Redirecionando para o login...');
                 setTimeout(() => {
