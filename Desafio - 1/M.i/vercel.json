@@ -1,0 +1,9 @@
+{
+    "functions": {
+      "api/proxy.js": {
+        "runtime": "nodejs14.x",
+        "memory": 128
+      }
+    }
+  }
+  
