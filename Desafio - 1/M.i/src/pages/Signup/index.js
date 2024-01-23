@@ -30,7 +30,7 @@ function Signup() {
 
         try {
             // Simulando o envio dos dados para um servidor
-            const response = await fetch('http://localhost:3000/users', {
+            const response = await fetch('https://raw.githubusercontent.com/kalebzaki4/projetos-react/master/db.json', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
