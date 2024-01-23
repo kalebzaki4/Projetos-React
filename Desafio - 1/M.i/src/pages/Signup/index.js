@@ -28,8 +28,7 @@ function Signup() {
         }
 
         try {
-            // Simulando o envio dos dados para um servidor
-            const response = await fetch('https://kalebzaki4.github.io/projetos-react/db.json', {
+            const response = await fetch('/api/proxy', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -41,8 +40,6 @@ function Signup() {
                 // Adicionando o novo usuário ao estado local
                 const newUser = { id: Date.now(), email, password };
                 setUsers([...users, newUser]);
-
-                // Não é necessário adicionar ao db.json local, pois já estamos salvando no GitHub
 
                 setSuccessMessage('Conta criada com sucesso! Redirecionando para o login...');
                 setTimeout(() => {
