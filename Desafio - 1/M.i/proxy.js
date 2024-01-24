@@ -20,8 +20,8 @@ module.exports = async (req, res) => {
       const { action, email, password } = req.body;
 
       if (action === 'register') {
-        // Registrar um novo usuário
-        const response = await fetch('https://kalebzaki4.github.io/projetos-react/db.json', {
+        // Registrar um novo usuário diretamente no GitHub
+        const response = await fetch('https://raw.githubusercontent.com/seu-usuario/seu-repositorio/master/db.json', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -35,21 +35,15 @@ module.exports = async (req, res) => {
           res.status(500).json({ error: 'Erro ao registrar o usuário.' });
         }
       } else if (action === 'login') {
-        // Autenticar o usuário
-        const user = users.find((u) => u.email === email && u.password === password);
-
-        if (user) {
-          res.status(200).json({ message: 'Login bem-sucedido!' });
-        } else {
-          res.status(401).json({ error: 'Credenciais inválidas.' });
-        }
+        // Autenticar o usuário (se necessário)
+        // ...
       } else {
         res.status(400).json({ error: 'Ação não suportada.' });
       }
     } else {
       // Lidar com outras solicitações (GET)
       handleCors(res);
-      const response = await fetch('https://kalebzaki4.github.io/projetos-react/db.json');
+      const response = await fetch('https://raw.githubusercontent.com/seu-usuario/seu-repositorio/master/db.json');
       const data = await response.json();
       res.status(200).json(data);
     }
