@@ -28,7 +28,7 @@ function Signup() {
         }
 
         try {
-            const response = await fetch('/api/proxy', {
+            const response = await fetch('https://raw.githubusercontent.com/kalebzaki4/projetos-react/master/db.json', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
