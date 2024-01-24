@@ -30,7 +30,14 @@ function Login() {
                 }),
             });
 
-            // Restante do código...
+            if (response.ok) {
+                // Login bem-sucedido
+                navigate('/dashboard'); // Substitua '/dashboard' pelo caminho para a página após o login
+            } else {
+                // Login falhou
+                const data = await response.json();
+                setError(data.msg || 'Ocorreu um erro ao efetuar o login. Tente novamente.');
+            }
         } catch (error) {
             setError('Ocorreu um erro ao efetuar o login. Tente novamente.');
         }
