@@ -28,7 +28,7 @@ function Signup() {
         }
 
         try {
-            const response = await fetch('/api/proxy', {  // <-- Ajustei o caminho aqui
+            const response = await fetch('/api/proxy', {  // Ajustado o caminho aqui
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -41,9 +41,6 @@ function Signup() {
             });
 
             if (response.ok) {
-                // Adicionando o novo usuário ao estado local (se necessário)
-                // ...
-
                 setSuccessMessage('Conta criada com sucesso! Redirecionando para o login...');
                 setTimeout(() => {
                     navigate('/');
