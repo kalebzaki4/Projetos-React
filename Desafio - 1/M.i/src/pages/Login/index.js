@@ -20,14 +20,25 @@ function Login() {
         }
 
         try {
-            // Simulando a autenticação com um servidor
-            const response = await fetch('http://localhost:3000/users?email=' + email + '&password=' + password);
+            // Fazer uma solicitação ao servidor ou API
+            const response = await fetch('/api/proxy', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    action: 'login',
+                    email,
+                    password,
+                }),
+            });
 
             if (response.ok) {
-                const user = await response.json();
-                if (user.length > 0) {
+                const data = await response.json();
+
+                if (data.message === 'Login bem-sucedido!') {
                     setError('');
-                    navigate('/dashboard'); // Redireciona para a página de dashboard
+                    navigate('/dashboard'); // Redireciona para a página de dashboard após o login bem-sucedido
                 } else {
                     setError('Credenciais inválidas. Tente novamente.');
                 }
