@@ -20,7 +20,7 @@ function Login() {
 
         try {
             const response = await fetch('http://localhost:3000/auth/login', {
-                method: 'POST',
+                method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',
                 },
