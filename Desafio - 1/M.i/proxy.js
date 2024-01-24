@@ -21,7 +21,7 @@ module.exports = async (req, res) => {
 
       if (action === 'register') {
         // Registrar um novo usuário diretamente no GitHub
-        const response = await fetch('https://raw.githubusercontent.com/seu-usuario/seu-repositorio/master/db.json', {
+        const response = await fetch('https://raw.githubusercontent.com/kalebzaki4/projetos-react/master/db.json', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -43,7 +43,7 @@ module.exports = async (req, res) => {
     } else {
       // Lidar com outras solicitações (GET)
       handleCors(res);
-      const response = await fetch('https://raw.githubusercontent.com/seu-usuario/seu-repositorio/master/db.json');
+      const response = await fetch('https://raw.githubusercontent.com/kalebzaki4/projetos-react/master/db.json');
       const data = await response.json();
       res.status(200).json(data);
     }
