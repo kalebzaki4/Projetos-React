@@ -6,6 +6,7 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 app.use(cors());
+app.use(express.json()); // Adicionado para poder analisar JSON no corpo da solicitação
 
 app.post('/api/proxy', async (req, res) => {
   try {
@@ -17,7 +18,7 @@ app.post('/api/proxy', async (req, res) => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ users: [{ email, password }] }), // Corrigido aqui
+        body: JSON.stringify({ users: [{ email, password }] }),
       });
 
       if (response.ok) {
