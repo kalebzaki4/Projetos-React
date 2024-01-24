@@ -1,4 +1,3 @@
-// Login.js
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
@@ -20,31 +19,18 @@ function Login() {
         }
 
         try {
-            // Fazer uma solicitação ao servidor ou API
-            const response = await fetch('http://localhost:3001/api/proxy', {
+            const response = await fetch('http://localhost:3000/auth/login', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
-                    action: 'login',
                     email,
                     password,
                 }),
             });
 
-            if (response.ok) {
-                const data = await response.json();
-
-                if (data.message === 'Login bem-sucedido!') {
-                    setError('');
-                    navigate('/dashboard'); // Redireciona para a página de dashboard após o login bem-sucedido
-                } else {
-                    setError('Credenciais inválidas. Tente novamente.');
-                }
-            } else {
-                setError('Ocorreu um erro ao efetuar o login. Tente novamente.');
-            }
+            // Restante do código...
         } catch (error) {
             setError('Ocorreu um erro ao efetuar o login. Tente novamente.');
         }

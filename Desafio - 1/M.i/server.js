@@ -1,55 +1,147 @@
-const express = require('express');
-const cors = require('cors');
-const fetch = require('node-fetch');
+require("dotenv").config();
+const express = require("express");
+const mongoose = require("mongoose");
+const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
 
 const app = express();
-const PORT = process.env.PORT || 3001;
 
-app.use(cors());
+// models
+const User = require("./models/User");
+
+// Config JSON response
 app.use(express.json());
 
-// Adicionando cabeçalhos CORS para todas as solicitações
-const handleCors = (res) => {
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
-  res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-};
+// Open Route
+app.get("/", (req, res) => {
+  res.status(200).json({ msg: "Bem vindo a API!" });
+});
 
-app.post('/api/proxy', async (req, res) => {
+// Private Route
+app.get("/user/:id", checkToken, async (req, res) => {
+  const id = req.params.id;
+
+  // check if user exists
+  const user = await User.findById(id, "-password");
+
+  if (!user) {
+    return res.status(404).json({ msg: "Usuário não encontrado!" });
+  }
+
+  res.status(200).json({ user });
+});
+
+function checkToken(req, res, next) {
+  const authHeader = req.headers["authorization"];
+  const token = authHeader && authHeader.split(" ")[1];
+
+  if (!token) return res.status(401).json({ msg: "Acesso negado!" });
+
   try {
-    const { action, email, password } = req.body;
+    const secret = process.env.SECRET;
 
-    if (!action || !email || !password) {
-      return res.status(400).json({ error: 'Parâmetros inválidos.' });
-    }
+    jwt.verify(token, secret);
 
-    if (action === 'register') {
-      const response = await fetch('https://raw.githubusercontent.com/kalebzaki4/projetos-react/master/db.json', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ users: [{ email, password }] }),
-      });
+    next();
+  } catch (err) {
+    res.status(400).json({ msg: "O Token é inválido!" });
+  }
+}
 
-      if (response.ok) {
-        res.status(200).json({ message: 'Usuário registrado com sucesso!' });
-      } else {
-        console.error('Erro ao registrar o usuário:', response.status, await response.text());
-        res.status(500).json({ error: 'Falha ao registrar o usuário. Tente novamente mais tarde.' });
-      }
-    } else if (action === 'login') {
-      // Lógica de autenticação (se necessário)
-      res.status(200).json({ message: 'Login bem-sucedido!' });
-    } else {
-      res.status(400).json({ error: 'Ação não suportada.' });
-    }
+app.post("/auth/register", async (req, res) => {
+  const { email, password, confirmpassword } = req.body;
+
+  if (!email) {
+    return res.status(422).json({ msg: "O email é obrigatório!" });
+  }
+
+  if (!password) {
+    return res.status(422).json({ msg: "A senha é obrigatória!" });
+  }
+
+  if (password != confirmpassword) {
+    return res
+      .status(422)
+      .json({ msg: "A senha e a confirmação precisam ser iguais!" });
+  }
+
+  // check if user exists
+  const userExists = await User.findOne({ email: email });
+
+  if (userExists) {
+    return res.status(422).json({ msg: "Por favor, utilize outro e-mail!" });
+  }
+
+  // create password
+  const salt = await bcrypt.genSalt(12);
+  const passwordHash = await bcrypt.hash(password, salt);
+
+  // create user
+  const user = new User({
+    email,
+    passwordHash,
+  });
+
+  try {
+    await user.save();
+
+    res.status(201).json({ msg: "Usuário criado com sucesso!" });
   } catch (error) {
-    console.error('Erro ao processar a solicitação:', error);
-    res.status(500).json({ error: 'Erro interno no servidor.' });
+    res.status(500).json({ msg: error });
   }
 });
 
-app.listen(PORT, () => {
-  console.log(`Servidor rodando na porta ${PORT}`);
+app.post("/auth/login", async (req, res) => {
+  const { email, password } = req.body;
+
+  // validations
+  if (!email) {
+    return res.status(422).json({ msg: "O email é obrigatório!" });
+  }
+
+  if (!password) {
+    return res.status(422).json({ msg: "A senha é obrigatória!" });
+  }
+
+  // check if user exists
+  const user = await User.findOne({ email: email });
+
+  if (!user) {
+    return res.status(404).json({ msg: "Usuário não encontrado!" });
+  }
+
+  // check if password match
+  const checkPassword = await bcrypt.compare(password, user.password);
+
+  if (!checkPassword) {
+    return res.status(422).json({ msg: "Senha inválida" });
+  }
+
+  try {
+    const secret = process.env.SECRET;
+
+    const token = jwt.sign(
+      {
+        id: user._id,
+      },
+      secret
+    );
+
+    res.status(200).json({ msg: "Autenticação realizada com sucesso!", token });
+  } catch (error) {
+    res.status(500).json({ msg: error });
+  }
 });
+
+const dbUser = process.env.DB_USER;
+const dbPassword = process.env.DB_PASS;
+
+mongoose
+  .connect(
+    `mongodb+srv://${dbUser}:${dbPassword}@cluster0.vcpqpqt.mongodb.net/`
+  )
+  .then(() => {
+    console.log("Conectou ao banco!");
+    app.listen(3000);
+  })
+  .catch((err) => console.log(err));        
