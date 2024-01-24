@@ -33,13 +33,16 @@ function Signup() {
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ email, password }),
+                body: JSON.stringify({
+                    action: 'register',
+                    email,
+                    password,
+                }),
             });
 
             if (response.ok) {
-                // Adicionando o novo usuário ao estado local
-                const newUser = { id: Date.now(), email, password };
-                setUsers([...users, newUser]);
+                // Adicionando o novo usuário ao estado local (se necessário)
+                // ...
 
                 setSuccessMessage('Conta criada com sucesso! Redirecionando para o login...');
                 setTimeout(() => {
