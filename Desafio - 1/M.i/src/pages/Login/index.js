@@ -19,7 +19,7 @@ function Login() {
         }
 
         try {
-            const response = await fetch('http://localhost:3000/auth/signup', {
+            const response = await fetch('http://localhost:3000/auth/register', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -32,7 +32,7 @@ function Login() {
 
             if (response.ok) {
                 // Login bem-sucedido
-                navigate('/dashboard'); // Substitua '/dashboard' pelo caminho para a página após o login
+                navigate('/dashboard');
             } else {
                 // Login falhou
                 const data = await response.json();
