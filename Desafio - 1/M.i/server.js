@@ -6,7 +6,7 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 app.use(cors());
-app.use(express.json()); // Adicionado para poder analisar JSON no corpo da solicitação
+app.use(express.json());
 
 // Adicionando cabeçalhos CORS para todas as solicitações
 const handleCors = (res) => {
@@ -40,7 +40,7 @@ app.post('/api/proxy', async (req, res) => {
       res.status(400).json({ error: 'Ação não suportada.' });
     }
   } catch (error) {
-    console.error(error);
+    console.error(error); // Adiciona o erro ao console
     res.status(500).json({ error: 'Erro ao processar a solicitação.' });
   }
 });
