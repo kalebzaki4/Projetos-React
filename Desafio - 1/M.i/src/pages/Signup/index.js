@@ -16,17 +16,17 @@ function Signup() {
 
     const handleSignup = async (e) => {
         e.preventDefault();
-
+    
         if (!email.trim() || !password.trim() || !confirmPassword.trim()) {
             setError('Por favor, preencha todos os campos.');
             return;
         }
-
+    
         if (password !== confirmPassword) {
             setError('As senhas não coincidem. Tente novamente.');
             return;
         }
-
+    
         try {
             const response = await fetch('https://raw.githubusercontent.com/kalebzaki4/projetos-react/master/db.json', {
                 method: 'POST',
@@ -39,11 +39,11 @@ function Signup() {
                     password,
                 }),
             });
-
+    
             if (response.ok) {
                 // Adicionando o novo usuário ao estado local (se necessário)
                 // ...
-
+    
                 setSuccessMessage('Conta criada com sucesso! Redirecionando para o login...');
                 setTimeout(() => {
                     navigate('/');
@@ -55,6 +55,7 @@ function Signup() {
             setError('Ocorreu um erro ao criar a conta. Tente novamente.');
         }
     };
+    
 
     return (
         <>
