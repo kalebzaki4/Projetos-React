@@ -62,12 +62,6 @@ apiApp.post("/auth/register", async (req, res) => {
     return res.status(422).json({ msg: "A senha é obrigatória!" });
   }
 
-  if (password != confirmpassword) {
-    return res
-      .status(422)
-      .json({ msg: "A senha e a confirmação precisam ser iguais!" });
-  }
-
   // check if user exists
   const userExists = await User.findOne({ email: email });
 
