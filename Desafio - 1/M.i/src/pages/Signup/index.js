@@ -28,7 +28,7 @@ function Signup() {
         }
 
         try {
-            const response = await fetch('/api/proxy', {
+            const response = await fetch('/proxy', {  // <-- Altere o caminho aqui
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
