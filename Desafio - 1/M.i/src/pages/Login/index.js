@@ -21,7 +21,7 @@ function Login() {
 
         try {
             // Fazer uma solicitação ao servidor ou API
-            const response = await fetch('http://localhost:3001/m.i/proxy', {
+            const response = await fetch('http://localhost:3001/api/proxy', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
