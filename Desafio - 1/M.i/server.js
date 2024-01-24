@@ -4,21 +4,21 @@ const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 
-const app = express();
+const apiApp = express(); // Alterei o nome de 'app' para 'apiApp'
 
 // models
 const User = require("./models/User");
 
 // Config JSON response
-app.use(express.json());
+apiApp.use(express.json());
 
 // Open Route
-app.get("/", (req, res) => {
+apiApp.get("/", (req, res) => {
   res.status(200).json({ msg: "Bem vindo a API!" });
 });
 
 // Private Route
-app.get("/user/:id", checkToken, async (req, res) => {
+apiApp.get("/user/:id", checkToken, async (req, res) => {
   const id = req.params.id;
 
   // check if user exists
@@ -48,7 +48,7 @@ function checkToken(req, res, next) {
   }
 }
 
-app.post("/auth/register", async (req, res) => {
+apiApp.post("/auth/register", async (req, res) => {
   const { email, password, confirmpassword } = req.body;
 
   if (!email) {
@@ -91,7 +91,7 @@ app.post("/auth/register", async (req, res) => {
   }
 });
 
-app.post("/auth/login", async (req, res) => {
+apiApp.post("/auth/login", async (req, res) => {
   const { email, password } = req.body;
 
   // validations
@@ -142,6 +142,6 @@ mongoose
   )
   .then(() => {
     console.log("Conectou ao banco!");
-    app.listen(3000);
+    apiApp.listen(3000); // Alterei de 'app' para 'apiApp'
   })
-  .catch((err) => console.log(err));        
+  .catch((err) => console.log(err));
