@@ -3,8 +3,11 @@ const express = require("express");
 const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
+const cors = require("cors"); // Adicionado o módulo cors
 
-const apiApp = express(); // Alterei o nome de 'app' para 'apiApp'
+const apiApp = express(); // Alterado o nome de 'app' para 'apiApp'
+
+apiApp.use(cors()); // Adicione isso antes das rotas
 
 // models
 const User = require("./models/User");
@@ -14,7 +17,7 @@ apiApp.use(express.json());
 
 // Open Route
 apiApp.get("/", (req, res) => {
-  res.status(200).json({ msg: "Bem vindo a API!" });
+  res.status(200).json({ msg: "Bem-vindo à API!" });
 });
 
 // Private Route
@@ -142,6 +145,6 @@ mongoose
   )
   .then(() => {
     console.log("Conectou ao banco!");
-    apiApp.listen(3000); // Alterei de 'app' para 'apiApp'
+    apiApp.listen(3000); // Alterado de 'app' para 'apiApp'
   })
   .catch((err) => console.log(err));
