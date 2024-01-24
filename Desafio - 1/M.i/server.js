@@ -19,6 +19,10 @@ app.post('/api/proxy', async (req, res) => {
   try {
     const { action, email, password } = req.body;
 
+    if (!action || !email || !password) {
+      return res.status(400).json({ error: 'Parâmetros inválidos.' });
+    }
+
     if (action === 'register') {
       const response = await fetch('https://raw.githubusercontent.com/kalebzaki4/projetos-react/master/db.json', {
         method: 'POST',
@@ -31,7 +35,8 @@ app.post('/api/proxy', async (req, res) => {
       if (response.ok) {
         res.status(200).json({ message: 'Usuário registrado com sucesso!' });
       } else {
-        res.status(500).json({ error: 'Erro ao registrar o usuário.' });
+        console.error('Erro ao registrar o usuário:', response.status, await response.text());
+        res.status(500).json({ error: 'Falha ao registrar o usuário. Tente novamente mais tarde.' });
       }
     } else if (action === 'login') {
       // Lógica de autenticação (se necessário)
@@ -40,8 +45,8 @@ app.post('/api/proxy', async (req, res) => {
       res.status(400).json({ error: 'Ação não suportada.' });
     }
   } catch (error) {
-    console.error(error); // Adiciona o erro ao console
-    res.status(500).json({ error: 'Erro ao processar a solicitação.' });
+    console.error('Erro ao processar a solicitação:', error);
+    res.status(500).json({ error: 'Erro interno no servidor.' });
   }
 });
 
