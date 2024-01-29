@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
+import 'react-router-dom';
 import './style.css';
 
 function Login() {
@@ -16,38 +17,13 @@ function Login() {
         if (!email.trim() || !password.trim()) {
             setError('Por favor, preencha todos os campos.');
             return;
-        }
-
-        try {
-            const response = await fetch('http://localhost:3000/auth/register', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    email,
-                    password,
-                }),
-            });
-
-            if (response.ok) {
-                // Login bem-sucedido
-                navigate('/dashboard');
-            } else {
-                // Login falhou
-                const data = await response.json();
-                setError(data.msg || 'Ocorreu um erro ao efetuar o login. Tente novamente.');
-            }
-        } catch (error) {
-            setError('Ocorreu um erro ao efetuar o login. Tente novamente.');
-        }
-    };
+        }}
 
     return (
         <>
             <div className="container">
                 <div className="wrap-login">
-                    <form className="login-form" onSubmit={handleLogin}>
+                    <form className="login-form">
                         <span className="login-form-title">Já tem uma conta?</span>
                         <span className="login-form-title-2">Faça seu login e boa análise!</span>
 
@@ -87,9 +63,11 @@ function Login() {
                         </div>
 
                         <div className="container-login-form-btn">
+                            <Link>
                             <button className="login-form-btn" type="submit">
                                 Entrar
                             </button>
+                            </Link>
                         </div>
 
                         {error && <div className="error-message">{error}</div>}

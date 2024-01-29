@@ -13,46 +13,6 @@ function Signup() {
     const [successMessage, setSuccessMessage] = useState('');
     const navigate = useNavigate();
 
-    const handleSignup = async (e) => {
-        e.preventDefault();
-
-        if (!email.trim() || !password.trim() || !confirmPassword.trim()) {
-            setError('Por favor, preencha todos os campos.');
-            return;
-        }
-
-        if (password !== confirmPassword) {
-            setError('As senhas não coincidem. Tente novamente.');
-            return;
-        }
-
-        try {
-            const response = await fetch('http://localhost:3000/auth/register', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    email,
-                    password,
-                    confirmpassword: confirmPassword,
-                }),
-            });
-
-            if (response.ok) {
-                setSuccessMessage('Conta criada com sucesso!');
-                setError('');
-            } else {
-                const data = await response.json();
-                setError(data.msg || 'Ocorreu um erro ao criar a conta. Tente novamente.');
-                setSuccessMessage('');
-            }
-        } catch (error) {
-            setError('Ocorreu um erro ao criar a conta. Tente novamente.');
-            setSuccessMessage('');
-        }
-    };
-
     return (
         <>
             <div className="container">
