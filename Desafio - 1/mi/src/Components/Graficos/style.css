@@ -1,0 +1,18 @@
+.card {
+    position: relative;
+    left: 110px;
+    top: 110px;
+    display: flex;
+}
+
+.card2 {
+    position: relative;
+    left: 490px;
+    top: -2px;
+    display: flex;
+}
+
+.typography{
+    display: flex;
+    position: relative;
+}
