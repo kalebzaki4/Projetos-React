@@ -1,13 +1,13 @@
 .card {
     position: relative;
-    left: 110px;
+    left: 270px;
     top: 110px;
     display: flex;
 }
 
 .card2 {
     position: relative;
-    left: 490px;
+    left: 650px;
     top: -2px;
     display: flex;
 }
