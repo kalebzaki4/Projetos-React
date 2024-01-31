@@ -23,6 +23,15 @@
     margin: 20px;
 }
 
+.card4 {
+    position: relative;
+    left: 270px;
+    top: 110px;
+    display: inline-block;
+    margin: 20px;
+    width: 1550px;
+}
+
 .typography{
     display: flex;
     position: relative;
