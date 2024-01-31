@@ -2,14 +2,25 @@
     position: relative;
     left: 270px;
     top: 110px;
-    display: flex;
+    display: inline-block;
+    width: 100%;
+    margin: 0 20px;
 }
 
 .card2 {
     position: relative;
-    left: 650px;
-    top: -2px;
-    display: flex;
+    left: 270px;
+    top: 110px;
+    display: inline-block;
+    margin: 20px;
+}
+
+.card3 {
+    position: relative;
+    left: 270px;
+    top: 110px;
+    display: inline-block;
+    margin: 20px;
 }
 
 .typography{
