@@ -1,6 +1,5 @@
-// Arquivo Menu.jsx
 import React from 'react';
-import { styled, createTheme, useTheme, ThemeProvider } from '@mui/material/styles';
+import { styled, createTheme, ThemeProvider } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
 import AppBar from '@mui/material/AppBar';
@@ -23,16 +22,14 @@ import IconButton from '@mui/material/IconButton';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
-import InputLabel from '@mui/material/InputLabel';
-import FormControl from '@mui/material/FormControl';
-import Select from '@mui/material/Select';
+import TextField from '@mui/material/TextField';
+import Autocomplete from '@mui/material/Autocomplete';
 
 const top100Films = [
   // ... (o array foi mantido igual)
 ];
 
 const options = [
-  'Nada',
   'Grafico',
   'Linhas',
   'Estrofes',
@@ -91,11 +88,6 @@ const LongMenu = () => {
     },
   });
 
-  const defaultProps= {
-    options: top100Films,
-    getOptionLabel: (option) => option.title,
-  };
-
   return (
     <>
       <WhiteLongMenu
@@ -144,6 +136,34 @@ export default function ClippedDrawer() {
           </Typography>
           <LongMenu />
           <Box sx={{ flexGrow: 1 }} />
+          <Stack spacing={1} sx={{ width: 300, marginRight: '16px' }}>
+            <Autocomplete
+              options={top100Films}
+              getOptionLabel={(option) => option.title}
+              id="disable-close-on-select"
+              disableCloseOnSelect
+              renderInput={(params) => (
+                <TextField
+                  {...params}
+                  label="Projeto 1"
+                  variant="outlined"
+                  sx={{
+                    '& .MuiOutlinedInput-root': {
+                      borderRadius: '4px',
+                      backgroundColor: 'white',
+                      '& fieldset': {
+                        borderColor: 'white',
+                      },
+                    },
+                    '& input': {
+                      paddingRight: '32px',
+                      color: 'black',
+                    },
+                  }}
+                />
+              )}
+            />
+          </Stack>
           <MailBadge />
           <Stack direction="row" spacing={2}>
             <Box width={1} />
