@@ -1,7 +1,6 @@
-import * as React from 'react';
-import { styled } from '@mui/material/styles';
-import Button from '@mui/material/Button';
-import CloudUploadIcon from '@mui/icons-material/CloudUpload';
+// Arquivo Menu.jsx
+import React from 'react';
+import { styled, createTheme, useTheme, ThemeProvider } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
 import AppBar from '@mui/material/AppBar';
@@ -24,22 +23,20 @@ import IconButton from '@mui/material/IconButton';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
+import InputLabel from '@mui/material/InputLabel';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
+
+const top100Films = [
+  // ... (o array foi mantido igual)
+];
 
 const options = [
-  'None',
-  'Atria',
-  'Callisto',
-  'Dione',
-  'Ganymede',
-  'Hangouts Call',
-  'Luna',
-  'Oberon',
-  'Phobos',
-  'Pyxis',
-  'Sedna',
-  'Titania',
-  'Triton',
-  'Umbriel',
+  'Nada',
+  'Grafico',
+  'Linhas',
+  'Estrofes',
+  'Avaliação',
 ];
 
 const ITEM_HEIGHT = 48;
@@ -67,9 +64,40 @@ const LongMenu = () => {
     setAnchorEl(null);
   };
 
+  const customTheme = createTheme({
+    palette: {
+      mode: 'light', // ou 'dark' conforme o seu tema
+    },
+    components: {
+      MuiAutocomplete: {
+        defaultProps: {
+          renderOption: (props, option, state, ownerState) => (
+            <Box
+              sx={{
+                borderRadius: '8px',
+                margin: '5px',
+                [`&.${ownerState.classes.option}`]: {
+                  padding: '8px',
+                },
+              }}
+              component="li"
+              {...props}
+            >
+              {ownerState.getOptionLabel(option)}
+            </Box>
+          ),
+        },
+      },
+    },
+  });
+
+  const defaultProps= {
+    options: top100Films,
+    getOptionLabel: (option) => option.title,
+  };
+
   return (
     <>
-      {/* Usando a constante WhiteLongMenu para estilizar o ícone do menu na cor branca */}
       <WhiteLongMenu
         aria-label="more"
         aria-controls="long-menu"
@@ -96,6 +124,10 @@ const LongMenu = () => {
             {option}
           </MenuItem>
         ))}
+        <ThemeProvider theme={customTheme}>
+          <Stack spacing={5} sx={{ width: 300 }}>
+          </Stack>
+        </ThemeProvider>
       </Menu>
     </>
   );
@@ -130,7 +162,7 @@ export default function ClippedDrawer() {
         <Toolbar />
         <Box sx={{ overflow: 'auto' }}>
           <List>
-            {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
+            {['Inicio', 'Gerenciamento',].map((text, index) => (
               <ListItem key={text} disablePadding>
                 <ListItemButton>
                   <ListItemIcon>
@@ -142,18 +174,6 @@ export default function ClippedDrawer() {
             ))}
           </List>
           <Divider />
-          <List>
-            {['All mail', 'Trash', 'Spam'].map((text, index) => (
-              <ListItem key={text} disablePadding>
-                <ListItemButton>
-                  <ListItemIcon>
-                    {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                  </ListItemIcon>
-                  <ListItemText primary={text} />
-                </ListItemButton>
-              </ListItem>
-            ))}
-          </List>
           <Divider />
           <List>
             <ListItem>
