@@ -1,11 +1,10 @@
-// Arquivo MediaCard.jsx
-import * as React from 'react';
+import React from 'react';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
-import CardActions from '@mui/material/CardActions';  // Adicione esta linha
+import CardActions from '@mui/material/CardActions';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -16,7 +15,7 @@ import Paper from '@mui/material/Paper';
 
 import './style.css';
 
-import { Chart } from "react-google-charts";
+import { Chart } from 'react-google-charts';
 
 function createData(name, calories, fat, carbs, protein) {
   return { name, calories, fat, carbs, protein };
@@ -30,7 +29,7 @@ const rows = [
   createData('Gingerbread', 356, 16.0, 49, 3.9),
 ];
 
-export default function MediaCard() {
+const MediaCard = () => {
   return (
     <>
       <Card className="card" sx={{ maxWidth: 350, borderRadius: 3 }}>
@@ -43,7 +42,7 @@ export default function MediaCard() {
           <Typography gutterBottom variant="h5" component="div">
             Soma das entradas
           </Typography>
-          <Typography className='typography' variant="h5" color="text.secondary">
+          <Typography className="typography" variant="h5" color="text.secondary">
             R$1.500,00
           </Typography>
         </CardContent>
@@ -58,7 +57,7 @@ export default function MediaCard() {
           <Typography gutterBottom variant="h5" component="div">
             Aluguel
           </Typography>
-          <Typography className='typography' variant="h5" color="text.secondary">
+          <Typography className="typography" variant="h5" color="text.secondary">
             R$400,00
           </Typography>
         </CardContent>
@@ -73,7 +72,7 @@ export default function MediaCard() {
           <Typography gutterBottom variant="h5" component="div">
             Conta de água
           </Typography>
-          <Typography className='typography' variant="h5" color="text.secondary">
+          <Typography className="typography" variant="h5" color="text.secondary">
             R$100,00
           </Typography>
         </CardContent>
@@ -88,12 +87,12 @@ export default function MediaCard() {
           <Typography gutterBottom variant="h5" component="div">
             Conta de luz
           </Typography>
-          <Typography className='typography' variant="h5" color="text.secondary">
+          <Typography className="typography" variant="h5" color="text.secondary">
             R$200,00
           </Typography>
         </CardContent>
       </Card>
-      <Card className='card2'>
+      <Card className="card2">
         {/* Componente do primeiro gráfico */}
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
@@ -104,7 +103,7 @@ export default function MediaCard() {
             width="100%"
             height="300px"
             data={[
-              ["x", "Ganhos", "Gastos"],
+              ['x', 'Ganhos', 'Gastos'],
               [0, 0, 0],
               [1, 10, 5],
               [2, 23, 15],
@@ -115,13 +114,13 @@ export default function MediaCard() {
             ]}
             options={{
               hAxis: {
-                title: "Dias",
+                title: 'Dias',
               },
               vAxis: {
-                title: "Gastos",
+                title: 'Gastos',
               },
               series: {
-                1: { curveType: "function" },
+                1: { curveType: 'function' },
               },
             }}
           />
@@ -133,7 +132,7 @@ export default function MediaCard() {
           <Button size="small">Saiba mais</Button>
         </CardActions>
       </Card>
-      <Card className='card3'>
+      <Card className="card3">
         {/* Componente do segundo gráfico */}
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
@@ -144,14 +143,14 @@ export default function MediaCard() {
             width="100%"
             height="300px"
             data={[
-              ["Task", "Hours per Day"],
-              ["Soma das saidas", 11],
-              ["Aluguel", 4],
-              ["Conta de água", 2],
-              ["Conta de luz", 3],
+              ['Task', 'Hours per Day'],
+              ['Soma das saidas', 11],
+              ['Aluguel', 4],
+              ['Conta de água', 2],
+              ['Conta de luz', 3],
             ]}
             options={{
-              title: "Analise dos dados:",
+              title: 'Analise dos dados:',
               pieHole: 0.4,
               is3D: false,
             }}
@@ -164,8 +163,7 @@ export default function MediaCard() {
           <Button size="small">Saiba mais</Button>
         </CardActions>
       </Card>
-      <Card className='card4'>
-        {/* Componente do terceiro gráfico */}
+      <Card className="card4">
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
             Lista de Gastos:
@@ -206,4 +204,6 @@ export default function MediaCard() {
       </Card>
     </>
   );
-}
+};
+
+export default MediaCard;
