@@ -1,25 +1,24 @@
-import * as React from 'react';
-import { styled } from '@mui/material/styles';
+import React, { useCallback } from 'react';
+import { useDropzone } from 'react-dropzone';
 import Button from '@mui/material/Button';
 import CloudUploadIcon from '@mui/icons-material/CloudUpload';
 
-const VisuallyHiddenInput = styled('input')({
-  clip: 'rect(0 0 0 0)',
-  clipPath: 'inset(50%)',
-  height: 1,
-  overflow: 'hidden',
-  position: 'absolute',
-  bottom: 0,
-  left: 0,
-  whiteSpace: 'nowrap',
-  width: 1,
-});
+const InputFileUpload = ({ onFileUpload }) => {
+  const onDrop = useCallback((acceptedFiles) => {
+    // Handle the uploaded files (acceptedFiles)
+    onFileUpload(acceptedFiles);
+  }, [onFileUpload]);
 
-export default function InputFileUpload() {
+  const { getRootProps, getInputProps } = useDropzone({ onDrop, accept: '.csv, .xls, .xlsx, .txt' });
+
   return (
-    <Button component="label" variant="contained" startIcon={<CloudUploadIcon />}>
-      Upload arq.
-      <VisuallyHiddenInput type="file" />
-    </Button>
+    <div {...getRootProps()}>
+      <input {...getInputProps()} />
+      <Button component="label" variant="contained" startIcon={<CloudUploadIcon />}>
+        Upload arq.
+      </Button>
+    </div>
   );
-}
+};
+
+export default InputFileUpload;
