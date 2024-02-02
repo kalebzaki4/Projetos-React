@@ -1,7 +1,6 @@
 import React from 'react';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import CardActions from '@mui/material/CardActions';
@@ -12,10 +11,9 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+import { Chart } from 'react-google-charts';
 
 import './style.css';
-
-import { Chart } from 'react-google-charts';
 
 function createData(name, calories, fat, carbs, protein) {
   return { name, calories, fat, carbs, protein };
@@ -29,71 +27,50 @@ const rows = [
   createData('Gingerbread', 356, 16.0, 49, 3.9),
 ];
 
-const MediaCard = () => {
+export default function MediaCard() {
   return (
     <>
       <Card className="card" sx={{ maxWidth: 350, borderRadius: 3 }}>
-        <CardMedia
-          sx={{ height: 0 }}
-          image="/static/images/cards/contemplative-reptile.jpg"
-          title="green iguana"
-        />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
             Soma das entradas
           </Typography>
-          <Typography className="typography" variant="h5" color="text.secondary">
+          <Typography className='typography' variant="h5" color="text.secondary">
             R$1.500,00
           </Typography>
         </CardContent>
       </Card>
       <Card className="card" sx={{ maxWidth: 350, borderRadius: 3 }}>
-        <CardMedia
-          sx={{ height: 0 }}
-          image="/static/images/cards/contemplative-reptile.jpg"
-          title="green iguana"
-        />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
             Aluguel
           </Typography>
-          <Typography className="typography" variant="h5" color="text.secondary">
+          <Typography className='typography' variant="h5" color="text.secondary">
             R$400,00
           </Typography>
         </CardContent>
       </Card>
       <Card className="card" sx={{ maxWidth: 350, borderRadius: 3 }}>
-        <CardMedia
-          sx={{ height: 0 }}
-          image="/static/images/cards/contemplative-reptile.jpg"
-          title="green iguana"
-        />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
             Conta de água
           </Typography>
-          <Typography className="typography" variant="h5" color="text.secondary">
+          <Typography className='typography' variant="h5" color="text.secondary">
             R$100,00
           </Typography>
         </CardContent>
       </Card>
       <Card className="card" sx={{ maxWidth: 350, borderRadius: 3 }}>
-        <CardMedia
-          sx={{ height: 0 }}
-          image="/static/images/cards/contemplative-reptile.jpg"
-          title="green iguana"
-        />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
             Conta de luz
           </Typography>
-          <Typography className="typography" variant="h5" color="text.secondary">
+          <Typography className='typography' variant="h5" color="text.secondary">
             R$200,00
           </Typography>
         </CardContent>
       </Card>
-      <Card className="card2">
-        {/* Componente do primeiro gráfico */}
+      <Card className='card2'>
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
             Gráfico dos Ganhos/Gastos:
@@ -103,7 +80,7 @@ const MediaCard = () => {
             width="100%"
             height="300px"
             data={[
-              ['x', 'Ganhos', 'Gastos'],
+              ["x", "Ganhos", "Gastos"],
               [0, 0, 0],
               [1, 10, 5],
               [2, 23, 15],
@@ -114,13 +91,13 @@ const MediaCard = () => {
             ]}
             options={{
               hAxis: {
-                title: 'Dias',
+                title: "Dias",
               },
               vAxis: {
-                title: 'Gastos',
+                title: "Gastos",
               },
               series: {
-                1: { curveType: 'function' },
+                1: { curveType: "function" },
               },
             }}
           />
@@ -132,8 +109,7 @@ const MediaCard = () => {
           <Button size="small">Saiba mais</Button>
         </CardActions>
       </Card>
-      <Card className="card3">
-        {/* Componente do segundo gráfico */}
+      <Card className='card3'>
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
             Listas de gastos:
@@ -143,14 +119,14 @@ const MediaCard = () => {
             width="100%"
             height="300px"
             data={[
-              ['Task', 'Hours per Day'],
-              ['Soma das saidas', 11],
-              ['Aluguel', 4],
-              ['Conta de água', 2],
-              ['Conta de luz', 3],
+              ["Task", "Hours per Day"],
+              ["Soma das saidas", 11],
+              ["Aluguel", 4],
+              ["Conta de água", 2],
+              ["Conta de luz", 3],
             ]}
             options={{
-              title: 'Analise dos dados:',
+              title: "Analise dos dados:",
               pieHole: 0.4,
               is3D: false,
             }}
@@ -163,7 +139,7 @@ const MediaCard = () => {
           <Button size="small">Saiba mais</Button>
         </CardActions>
       </Card>
-      <Card className="card4">
+      <Card className='card4'>
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
             Lista de Gastos:
@@ -204,6 +180,5 @@ const MediaCard = () => {
       </Card>
     </>
   );
-};
-
-export default MediaCard;
+}
+  
