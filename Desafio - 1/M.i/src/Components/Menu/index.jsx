@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { styled, createTheme, ThemeProvider } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
@@ -24,17 +24,13 @@ import MenuItem from '@mui/material/MenuItem';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
+import { Chart } from 'react-google-charts';
 
 const top100Films = [
   // ... (o array foi mantido igual)
 ];
 
-const options = [
-  'Grafico',
-  'Linhas',
-  'Estrofes',
-  'Avaliação',
-];
+const options = ['Grafico', 'Linhas', 'Estrofes', 'Avaliação'];
 
 const ITEM_HEIGHT = 48;
 
@@ -118,6 +114,7 @@ const LongMenu = () => {
         ))}
         <ThemeProvider theme={customTheme}>
           <Stack spacing={5} sx={{ width: 300 }}>
+            {/* You can add additional components here */}
           </Stack>
         </ThemeProvider>
       </Menu>
@@ -129,7 +126,7 @@ export default function ClippedDrawer() {
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
-      <AppBar position="fixed" sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}>
+      <AppBar style={{ backgroundColor: '#2C516B' }} position="fixed" sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}>
         <Toolbar>
           <Typography variant="h6" noWrap component="div" sx={{ color: 'white', marginRight: 2 }}>
             M.i - Analisador de Dados
@@ -198,7 +195,7 @@ export default function ClippedDrawer() {
           <List>
             <ListItem>
               <ListItemButton>
-                <InputFileUpload />
+                <InputFileUpload onFileUpload={() => {}} onExcelRead={() => {}} style={{ backgroundColor: '#2C516B', color: '#FFFFFF' }} />
               </ListItemButton>
             </ListItem>
           </List>
