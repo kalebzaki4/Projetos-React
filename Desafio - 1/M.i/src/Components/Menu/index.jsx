@@ -24,7 +24,6 @@ import MenuItem from '@mui/material/MenuItem';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
-import { Chart } from 'react-google-charts';
 
 const top100Films = [
   // ... (o array foi mantido igual)
