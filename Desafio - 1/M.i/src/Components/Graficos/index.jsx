@@ -12,7 +12,6 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { Chart } from 'react-google-charts';
-
 import './style.css';
 
 function createData(name, calories, fat, carbs, protein) {
@@ -120,7 +119,7 @@ export default function MediaCard() {
             height="300px"
             data={[
               ["Task", "Hours per Day"],
-              ["Soma das saidas", 11],
+              ["Soma das saidas", 11  ],
               ["Aluguel", 4],
               ["Conta de água", 2],
               ["Conta de luz", 3],
