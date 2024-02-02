@@ -7,11 +7,9 @@ const InputFileUpload = ({ onFileUpload, onExcelRead, style }) => {
   const [excelData, setExcelData] = useState([]);
 
   const onDrop = useCallback((acceptedFiles) => {
-    // Handle the uploaded files
     console.log('Uploaded files:', acceptedFiles);
     onFileUpload(acceptedFiles);
 
-    // Assume that the first file is an Excel file, adjust this logic as needed
     const excelFile = acceptedFiles[0];
     if (excelFile) {
       const data = [['x', 'Ganhos', 'Gastos'], [0, 0, 0], [1, 10, 5], [2, 23, 15]];
