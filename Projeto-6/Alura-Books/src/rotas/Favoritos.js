@@ -1,6 +1,3 @@
-import Header from '../componentes/Header'
-import Pesquisa from '../componentes/Pesquisa'
-import UltimosLancamentos from '../componentes/UltimosLancamentos'
 import styled from 'styled-components'
 
 const AppContainer = styled.div`
@@ -12,7 +9,6 @@ const AppContainer = styled.div`
 function Favoritos() {
   return (
     <AppContainer>
-      <Pesquisa />
     </AppContainer>
   );
 }
